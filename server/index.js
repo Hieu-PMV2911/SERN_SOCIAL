@@ -12,6 +12,8 @@ const db = require('./models/index.js');
 
 // import file router
 const Auth = require('./controllers/auth.js');
+const Friends = require('./controllers/users.js');
+const Posts = require('./controllers/post.js');
 
 
 // CONFIGURATIONS
@@ -52,4 +54,6 @@ db.sequelize.sync().then(() =>{
 // USE ROUTER
 
 app.use('/auth', upload.single("picture"), Auth);
+app.use('/addFriends', upload.single("picture"), Friends);
+app.use('/post', upload.single("picture"), Posts);
 
