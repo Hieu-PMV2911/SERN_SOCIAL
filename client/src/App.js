@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, useNavigate, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import {HomePage, LoginPage, ProfilePage} from "./scenes/index";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
