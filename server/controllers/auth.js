@@ -29,12 +29,12 @@ route.post('/user/register' ,async (req, res, next) =>{
 route.post('/user/login' ,async (req,res) => {
 	const {email, password} = req.body;
 	const User = await Users.findOne({where: {email: email}});
-	if(!User) return res.status(400).json({msg: 'User does not exist'});
+	if(!User) return res.status(400).json({errors: 'User does not exist'});
 
 	bcrypt.compare(password, User.password).then((match)=>{
 		if(!match) return res.json({errors: "Wrong User or Password!!!"});
 		const accessToken = sign({email: User.email, id: User.id}, process.env.JWT_SECRET);
-		res.json({token: accessToken, email: email, id: User.id});
+		res.json({token: accessToken, email: email, user: User});
 	})
 })
 
