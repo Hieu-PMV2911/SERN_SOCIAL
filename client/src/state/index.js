@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+var location =  Location
 const initialState = {
 	mode : "light",
 	user: null,
@@ -30,7 +30,9 @@ export const authSlice = createSlice({
 			}
 		},
 		setPosts: (state, action) =>{
-			state.posts = action.payload.posts;
+			if(!location.reload()){
+				state.posts = [...state.posts, action.payload.posts];
+			}
 		},
 		setPost: (state, action) =>{
 			const updatePosts = state.posts.map((post)=>{

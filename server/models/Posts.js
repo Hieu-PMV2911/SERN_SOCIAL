@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 			type:DataTypes.STRING,
 			allowNull: false
 		},
-		location: {
+		email: {
 			type:DataTypes.STRING,
 			allowNull: false
 		},
@@ -16,11 +16,15 @@ module.exports = (sequelize, DataTypes) => {
 			type:DataTypes.STRING,
 			allowNull: false
 		},
-		usePicturePath: {
+		location: {
 			type:DataTypes.STRING,
 			allowNull: false
 		},
 		picturePath: {
+			type:DataTypes.STRING,
+			allowNull: false
+		},
+		usePicturePath: {
 			type:DataTypes.STRING,
 			allowNull: false
 		},
